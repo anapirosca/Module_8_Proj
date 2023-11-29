@@ -1,0 +1,38 @@
+---
+title: "biRdbRained"
+author: "Elizabeth Breitmeyer, Ana Pirosca, Georgia Sisk, Letacianna Stoudmire"
+date: "2023-11-29"
+output: html_document
+---
+##Introduction
+
+##Methods
+Occurrence data for five selected species of TGMs was gathered using the rgbif package. Logistic modeling operations were then used to predict the Julian day on which 25% of the population of the species arrives each year. The NOAA's NCDC API enabled identification of weather stations along the TGMs' migration path to Boston, and weather data from each station was collected. The effect of weather parameters on the arrival time was evaluated using linear mixed-effect modeling from the lme4 package. The car package was then used to perform an anova analysis of the interactions in order to determine the significance of the fixed effects.
+
+##Results
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(rgbif)
+library(tidyverse)
+library(MuMIn)
+library(rnoaa)
+library(data.table)
+library(ggmap)
+library(usmap)
+library(magick)
+library(cowplot)
+library(lme4)
+library(car)
+library(data.table)
+```
+```{r}
+
+```
+
+##Discussion
+
+#Author Contributions
+Elizabeth:
+Ana:
+Georgia: Methods section
+Letacianna: 
