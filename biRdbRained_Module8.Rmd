@@ -45,8 +45,17 @@ library(data.table)
 ```
 
 ```{r, echo=FALSE}
+kingfisher <- occ_data(scientificName = "Megaceryle alcyon", stateProvince = "Massachusetts", limit=200, year=2018)
+MA <- map_data('state', 'massachusetts')
 
-```
+kingfisher.p <- ggplot(MA, aes(long,lat,group=subregion) )+
+  geom_polygon(colour = "gray",fill="gray90")+geom_point(data=kingfisher[[2]],aes(x=decimalLongitude,y=decimalLatitude,size=individualCount),alpha=0.3,inherit.aes = F)+ coord_quickmap()+theme_void()
+
+kingfisher.p2 <- ggdraw() +
+  draw_image("https://www.allaboutbirds.org/guide/assets/photo/303715931-720px.jpg",scale = 0.3,halign=0,valign=1) +
+  draw_plot(kingfisher.p)
+print(kingfisher.p2)
+````
 
 ## Discussion
 
