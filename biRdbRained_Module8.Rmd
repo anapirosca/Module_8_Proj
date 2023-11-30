@@ -3,13 +3,31 @@ title: "biRdbRained"
 author: "Elizabeth Breitmeyer, Ana Pirosca, Georgia Sisk, Letacianna Stoudmire"
 date: "2023-11-29"
 output: html_document
+bibliography: BIOL3140.bib
 ---
-##Introduction
+## Introduction
+Climate change is a phenomenon that is dramatically impacting the natural world. Anthropogenic climate change has led to increases in mean annual global temperature which can have catastrophic impacts on the biosphere. For these reasons, it is important to investigate how climate change and shifting global temperatures are affecting different species.
 
-##Methods
+Birds, as a group, have been extensively studied by scientists and civilians alike. In particular, migrating birds have garnered much attention. In the spring in the northern hemisphere, many neotropical passerines take a long-distance migration from Central/South America to higher, more temperate latitudes in order to forage and breed. Some of these species fly over the Gulf of Mexico and are referred to as trans-Gulf migrants (TGMs).The date that these migrants arrive at these breeding grounds is extremely important in terms of fitness. With climate change leading to warmer springs, it may be important for TGMs to shift their arrival date at breeding grounds or they may face population declines.
+
+Previous research by @miller2008bird used 33 years of bird capture data from Manomet, Massachusetts to assess variation in spring migration times for 32 species of North American passerines. They found that migration times of many species occurred earlier over time, and several species' migration times were correlated with spring temperatures. Similarly, we seek to study the effect of local weather conditions on the arrival time of five species of trans-Gulf migrants in Massachusetts. The following five species were studied:
+
+* Belted kingfisher, *Megaceryle alcyon*
+* Common nighthawk, *Chordeiles minor*
+* Marsh wren, *Cistothorus palustris*
+* Olive-sided flycatcher, *Contopus cooperi*
+* Scarlet tanager, *Piranga olivacea*
+
+Ultimately our study sought to answer the following questions:
+
+1. Does arrival time vary according to temperature and wind variables along migration route for trans-Gulf migrants migrating to Massachusetts?
+2. If arrival time does vary with meteorological conditions, what role will climate change potentially play in the population status of TGMs arriving in MA during the spring?
+3. What role do climatic variables play in long-distance migration in passerine birds?
+
+## Methods
 Occurrence data for five selected species of TGMs was gathered using the rgbif package. Logistic modeling operations were then used to predict the Julian day on which 25% of the population of the species arrives each year. The NOAA's NCDC API enabled identification of weather stations along the TGMs' migration path to Boston, and weather data from each station was collected. The effect of weather parameters on the arrival time was evaluated using linear mixed-effect modeling from the lme4 package. The car package was then used to perform an anova analysis of the interactions in order to determine the significance of the fixed effects.
 
-##Results
+## Results
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(rgbif)
@@ -25,14 +43,20 @@ library(lme4)
 library(car)
 library(data.table)
 ```
-```{r}
+
+```{r, echo=FALSE}
 
 ```
 
-##Discussion
+## Discussion
 
-#Author Contributions
-Elizabeth:
+## Author Contributions
+Elizabeth: Introduction section
+
 Ana:
+
 Georgia: Methods section
-Letacianna: 
+
+Letacianna:
+
+## References
